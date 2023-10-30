@@ -11,7 +11,7 @@ function shuffleArray(array) {
   return array;
 }
 
-const Question = ({ score, endQuiz, setScore, totalQuestions }) => {
+const Question = ({ score, endQuiz, setScore, totalQuestions, resetQuiz }) => {
   const [questions, setQuestions] = useState([]);
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [showNextButton, setShowNextButton] = useState(false);
@@ -34,7 +34,7 @@ const Question = ({ score, endQuiz, setScore, totalQuestions }) => {
 
   useEffect(() => {
     fetchQuestions();
-  }, []);
+  }, [resetQuiz]);
 
   useEffect(() => {
     setIsLastQuestion(currentQuestionIndex === totalQuestions - 1);
@@ -69,7 +69,7 @@ const Question = ({ score, endQuiz, setScore, totalQuestions }) => {
   if (currentQuestionIndex < totalQuestions) {
     return (
       <div className="question">
-       <h1>Quiz Questions</h1>
+        <h1>Quiz Questions</h1>
         <h2>{questions[currentQuestionIndex]?.question}</h2>
         <div className="options">
           {questions[currentQuestionIndex]?.options.map((option, index) => (
@@ -89,7 +89,7 @@ const Question = ({ score, endQuiz, setScore, totalQuestions }) => {
         ) : null}
       </div>
     );
-  } else return <Results score={score}></Results>;
+  } else return <Results score={score} onPlayAgain={resetQuiz}></Results>;
 };
 
 export default Question;

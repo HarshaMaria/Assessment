@@ -1,13 +1,33 @@
+// import React from 'react';
+// import './Results.css';
+
+
+// const Results = ({ score }) => {
+//   return (
+//     <div className="results">
+//       <h2>Quiz Results</h2>
+//       <p>Score: {score}/10</p>
+//       <button onClick={() => window.location.reload()}>Play Again</button>
+//     </div>
+//   );
+// };
+
+// export default Results;
+
+
 import React from 'react';
 import './Results.css';
 
+const Results = ({ score, onPlayAgain }) => {
+  const handlePlayAgain = () => {
+    onPlayAgain();
+  };
 
-const Results = ({ score }) => {
   return (
     <div className="results">
       <h2>Quiz Results</h2>
       <p>Score: {score}/10</p>
-      <button onClick={() => window.location.reload()}>Play Again</button>
+      <button onClick={handlePlayAgain}>Play Again</button>
     </div>
   );
 };
