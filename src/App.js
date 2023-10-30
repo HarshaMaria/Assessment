@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
-import HomePage from './Components/HomePage';
-import Question from './Components/Question';
-import Results from './Components/Results';
-
+import HomePage from './components/HomePage';
+import Question from './components/Question';
+import Results  from './components/Results';
 
 const App = () => {
   const [gameState, setGameState] = useState('home');

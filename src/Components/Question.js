@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import './Question.css';
 import Results from './Results';
+
 function shuffleArray(array) {
   for (let i = array.length - 1; i > 0; i--) {
     const j = Math.floor(Math.random() * (i + 1)); 
@@ -91,3 +92,4 @@ const Question = ({ score, endQuiz, setScore, totalQuestions }) => {
 };
 
 export default Question;
+

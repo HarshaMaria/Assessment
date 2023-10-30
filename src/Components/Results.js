@@ -1,6 +1,7 @@
 import React from 'react';
 import './Results.css';
 
+
 const Results = ({ score }) => {
   return (
     <div className="results">
