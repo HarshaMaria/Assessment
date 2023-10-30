@@ -94,4 +94,3 @@ const Question = ({ score, endQuiz, setScore, totalQuestions, resetQuiz }) => {
 };
 
 export default Question;
-
