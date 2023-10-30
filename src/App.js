@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import HomePage from './components/HomePage';
 import Question from './components/Question';
 import Results from './components/Results';
+import './App.css';
 
 const App = () => {
   const [gameState, setGameState] = useState('home');
