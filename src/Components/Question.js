@@ -67,9 +67,10 @@ const Question = ({ score, endQuiz, setScore, totalQuestions, resetQuiz }) => {
   };
 
   if (currentQuestionIndex < totalQuestions) {
+    const questionNumber = currentQuestionIndex + 1;
     return (
       <div className="question">
-        <h1>Quiz Questions</h1>
+        <h1>Question {questionNumber}</h1>
         <h2>{questions[currentQuestionIndex]?.question}</h2>
         <div className="options">
           {questions[currentQuestionIndex]?.options.map((option, index) => (
